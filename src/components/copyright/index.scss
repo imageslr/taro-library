@@ -1,0 +1,23 @@
+.my-copyright {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 15px;
+  color: #999999;
+  font-size: 28px;
+  text-align: center;
+
+  &__link {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    font-size: 28px;
+    color: #6190e8;
+  }
+
+  &__text {
+    padding: 0 0.34em;
+    font-size: 24px;
+  }
+}

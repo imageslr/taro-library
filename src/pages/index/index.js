@@ -1,7 +1,7 @@
 import Taro, { Component } from "@tarojs/taro";
 import { View, Button, Text } from "@tarojs/components";
 import { connect } from "@tarojs/redux";
-
+import Copyright from "../../components/copyright";
 import { add, minus, asyncAdd } from "../../store/counter/action";
 
 import "./index.scss";
@@ -55,6 +55,7 @@ class Index extends Component {
         <View>
           <Text>Hello, World</Text>
         </View>
+        <Copyright />
       </View>
     );
   }

@@ -1,0 +1,43 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins/index.scss";
+
+/* prettier-ignore*/
+$at-search-bar-font-size: 14PX;
+/* prettier-ignore*/
+$at-search-bar-input-height: 30PX;
+/* prettier-ignore*/
+$at-search-bar-placeholder-padding: 5PX;
+$at-search-bar-input-bg-color: $color-bg-grey;
+$at-search-bar-placholder-color: $color-grey-2;
+
+.my-fake-search-bar {
+  padding: $spacing-v-sm $spacing-v-md;
+  background-color: $color-bg;
+  overflow: hidden;
+  box-sizing: border-box;
+  @include hairline-bottom();
+
+  &__placeholder-wrap {
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    padding: 0 $at-search-bar-placeholder-padding;
+    height: $at-search-bar-input-height;
+    line-height: 0;
+    vertical-align: middle;
+    background-color: $at-search-bar-input-bg-color;
+    border-radius: $at-search-bar-input-height / 2;
+
+    .at-icon {
+      color: $at-search-bar-placholder-color;
+      font-size: $at-search-bar-font-size;
+    }
+  }
+
+  &__placeholder {
+    margin-left: $at-search-bar-placeholder-padding;
+    color: $at-search-bar-placholder-color;
+    font-size: $at-search-bar-font-size;
+  }
+}

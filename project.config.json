@@ -2,9 +2,9 @@
   "miniprogramRoot": "./dist",
   "projectname": "taro-library",
   "description": "Taro图书小程序",
-  "appid": "touristappid",
+  "appid": "wx0eff868e8d0bef7f",
   "setting": {
-    "urlCheck": true,
+    "urlCheck": false,
     "es6": false,
     "postcss": false,
     "minified": false

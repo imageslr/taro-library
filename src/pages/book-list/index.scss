@@ -1,0 +1,8 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins/index.scss";
+
+.my-book-card {
+  &:after {
+    border-bottom-width: 0 !important;
+  }
+}

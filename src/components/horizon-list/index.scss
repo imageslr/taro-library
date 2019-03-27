@@ -1,0 +1,31 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins/index.scss";
+
+.my-horizon-list-container {
+  width: 100%;
+  background: $color-white;
+}
+
+.my-horizon-list {
+  white-space: nowrap;
+  &-item {
+    display: inline-block;
+    margin-right: $spacing-h-lg;
+    vertical-align: top;
+    white-space: normal;
+    @include active;
+    &:last-child {
+      margin-right: 0;
+    }
+    &__title {
+      font-size: $font-size-base;
+      color: $color-text-base;
+      @include line(2);
+    }
+    &__author {
+      font-size: $font-size-sm;
+      color: $color-grey-1;
+      @include line(1);
+    }
+  }
+}

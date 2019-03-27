@@ -1,0 +1,92 @@
+@import "../variables.scss";
+@import "./icon.scss";
+
+/* Margin */
+.margin-top-sm {
+  margin-top: $spacing-h-sm;
+}
+.margin-top-md {
+  margin-top: $spacing-h-md;
+}
+.margin-top-lg {
+  margin-top: $spacing-h-lg;
+}
+.margin-top-xl {
+  margin-top: $spacing-h-xl;
+}
+
+/* Color */
+.color-success {
+  color: $color-success;
+}
+.color-error {
+  color: $color-error;
+}
+.color-warning {
+  color: $color-warning;
+}
+.color-info {
+  color: $color-info;
+}
+.color-warning {
+  color: $color-warning;
+}
+.color-white {
+  color: $color-white;
+}
+
+.color-black-0 {
+  color: $color-black-0;
+}
+.color-black-1 {
+  color: $color-black-1;
+}
+.color-black-2 {
+  color: $color-black-2;
+}
+.color-black-3 {
+  color: $color-black-3;
+}
+
+/* Text Color */
+.color-text-base {
+  color: $color-text-base;
+}
+.color-text-placeholder {
+  color: $color-text-placeholder;
+}
+.color-text-disabled {
+  color: $color-text-disabled;
+}
+.color-text-title {
+  color: $color-text-title;
+}
+.color-text-paragraph {
+  color: $color-text-paragraph;
+}
+
+/* Font */
+.font-xs {
+  // 非常用字号，用于标签
+  font-size: $font-size-xs;
+}
+.font-sm {
+  // 用于辅助信息
+  font-size: $font-size-sm;
+}
+.font-base {
+  // 常用字号
+  font-size: $font-size-base;
+}
+.font-lg {
+  // 常规标题
+  font-size: $font-size-lg;
+}
+.font-xl {
+  // 大标题
+  font-size: $font-size-xl;
+}
+.font-xxl {
+  // 用于大号的数字
+  font-size: $font-size-xxl;
+}

@@ -1,0 +1,25 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins/index.scss";
+
+.my-book-card {
+  box-sizing: border-box;
+  padding: $spacing-v-lg $spacing-h-lg;
+  background: $color-white;
+  @include active;
+  @include hairline-top-bottom();
+  &__img {
+    flex: 0 0 $book-image-width;
+    width: $book-image-width;
+    height: $book-image-height;
+  }
+  &__info {
+    font-size: $font-size-base;
+    line-height: 1.7em;
+    color: $color-grey-1;
+    &-title {
+      font-size: $font-size-lg;
+      line-height: 2em;
+      color: $color-text-base;
+    }
+  }
+}

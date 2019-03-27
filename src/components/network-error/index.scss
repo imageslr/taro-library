@@ -1,0 +1,6 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins/index.scss";
+
+.my-network-error {
+  @include absolute-center;
+}

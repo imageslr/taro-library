@@ -1,0 +1,15 @@
+@import "../../styles/variables.scss";
+
+page {
+  background-color: $color-white;
+}
+
+.panel--first:after {
+  border-top-width: 0 !important;
+}
+
+.my-panel {
+  &:after {
+    border-bottom-width: 0 !important;
+  }
+}

@@ -1,0 +1,24 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins/index.scss";
+
+.my-panel {
+  position: relative;
+  background-color: $color-white;
+  @include hairline-top-bottom();
+
+  &-header {
+    box-sizing: border-box;
+    padding: $spacing-v-lg $spacing-h-lg;
+    font-size: $font-size-base;
+    @include active;
+    @include hairline-bottom-relative($left: $spacing-h-lg);
+    &__arrow {
+      flex: none;
+      width: auto;
+    }
+  }
+
+  &-body {
+    padding: $spacing-v-lg $spacing-h-lg;
+  }
+}

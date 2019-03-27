@@ -1,0 +1,11 @@
+// 自定义variables、mixins、utilities
+@import "./styles/variables.scss";
+@import "./styles/mixins/index.scss";
+@import "./styles/common/index.scss";
+
+// 引入taro样式文件
+@import "~taro-ui/dist/style/index.scss";
+
+page {
+  background-color: #fafbfc;
+}

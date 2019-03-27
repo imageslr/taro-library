@@ -1,0 +1,57 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins/index.scss";
+
+page {
+  background-color: $color-white;
+}
+
+.container {
+  /* prettier-ignore */
+  padding-top: 42PX;
+}
+
+.scan-row {
+  box-sizing: border-box;
+  font-size: $font-size-base;
+  padding: $spacing-v-lg $spacing-h-xl;
+  color: $color-black-1;
+  @include active;
+  @include hairline-bottom;
+  &__arrow {
+    flex: none;
+    width: auto;
+    color: $color-black-2;
+  }
+}
+
+.history-container {
+  padding: $spacing-v-lg $spacing-h-xl 0 $spacing-h-xl;
+
+  .history-title {
+    font-size: $font-size-lg;
+    font-weight: bold;
+    line-height: $line-height-zh;
+  }
+
+  .history-delete {
+    flex: none;
+    width: auto;
+    font-size: $font-size-lg;
+    line-height: $line-height-zh;
+    color: $color-brand;
+  }
+
+  .history-item {
+    margin-right: $spacing-h-lg;
+    margin-top: $spacing-v-lg;
+    max-width: 100%;
+    @include active;
+    @include line(1);
+  }
+}
+
+.my-book-card {
+  &:after {
+    border-top-width: 0 !important;
+  }
+}

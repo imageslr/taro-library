@@ -1,0 +1,51 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins/index.scss";
+
+$action-bar-height: 80px;
+
+page {
+  // padding-bottom: $action-bar-height;
+}
+
+.book {
+  box-sizing: border-box;
+  padding: 40px $spacing-h-xl 64px;
+  background: $color-white;
+  &__img {
+    flex: 0 0 $book-image-width;
+    width: $book-image-width;
+    height: $book-image-height;
+    margin-left: 5px;
+    // box-shadow: 0 5px 25px 1px rgba(55, 58, 64, 0.14);
+  }
+
+  &__info {
+    font-size: 28px;
+    line-height: 1.7em;
+    color: $color-grey-1;
+    &-title {
+      font-size: 34px;
+      line-height: 1.8em;
+      color: $color-text-base;
+    }
+  }
+}
+
+.book-introduction,
+.related-books {
+  // margin-top: $spacing-v-md;
+  padding: $spacing-v-xl $spacing-h-xl;
+  background: $color-white;
+  color: $color-text-base;
+  @include hairline-top;
+  &__title {
+    font-size: $font-size-lg;
+  }
+  &__content {
+    margin-top: $spacing-v-md;
+  }
+  .book-introduction__content {
+    font-size: $font-size-base;
+    line-height: 1.7em;
+  }
+}
