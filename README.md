@@ -4,6 +4,9 @@
 
 因为我也是刚接触 Taro/React，所以只是分享一些开发经验，绕开一些小坑。如果觉得不错的话，请点右上角“⭐️Star”支持一下我，谢谢！如果有问题，欢迎提 issue；如果有任何改进，也欢迎 PR。
 
+扫码体验：  
+![code](./assets/qrcode.jpg)
+
 ## 技术栈
 
 Taro + Taro UI + Redux + Webpack + ES6 + Mock
@@ -44,8 +47,6 @@ Taro + Taro UI + Redux + Webpack + ES6 + Mock
   - [运行配置相关](#运行配置相关)
     - [允许在 sass 中通过别名引入其他 sass 文件](#允许在-sass-中通过别名引入其他-sass-文件)
     - [引入 iconfont 图标](#引入-iconfont-图标)
-
-
 
 ## 运行项目
 
