@@ -595,7 +595,7 @@ async function getBook(id) {
 
 搭建本地 mock 服务器有几种思路，如本地安装 EasyMock，或者 php 简单写几行返回数据的代码，但是这些都需要安装额外的运行环境，工作量较大。所以我选择 [json-server](https://github.com/typicode/json-server) 实现 mock 服务，搭建过程主要参考了[纯手工打造前端后端分离项目中的 mock-server](https://yanm1ng.github.io/2017/06/12/%E7%BA%AF%E6%89%8B%E5%B7%A5%E6%89%93%E9%80%A0%E5%89%8D%E7%AB%AF%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84mock-server/)。
 
-[json-server](https://github.com/typicode/json-server) 是一个开箱即用的 REST API 模拟工具，它的文档中有一些简单示例。不过`json-server`还无法满足我对 mock 服务器的区别需求，所以后面还需要对它进行一些配置。
+[json-server](https://github.com/typicode/json-server) 是一个开箱即用的 REST API 模拟工具，它的文档中有一些简单示例。不过`json-server`还无法满足我对 mock 服务器的全部需求，所以后面还需要对它进行一些配置。
 
 完整代码见 [/mock](https://github.com/imageslr/taro-library/tree/master/mock)。
 
@@ -626,7 +626,7 @@ $ npm install json-server mockjs gulp gulp-nodemon browser-sync --save-dev
 
 `json-server`不支持在数据源的键名中添加`/`，无法直接设置`/books/new`这样的二级路径，因此我们需要使用`json-server`提供的路由重写功能：在数据源中，使用`books-new`表示`books/new`；在路由表中，将`/books/new`指向`/books-new`。代码见 [/mock/routes.js](https://github.com/imageslr/taro-library/tree/master/mock/routes.js)。
 
-最后在 [/mock/server.js](https://github.com/imageslr/taro-library/tree/master/mock/server.js) 中添加两个中间件。一个是将所有的`POST`请求转为`GET`请求，防止数据被修改；二是为服务器设置一个 750ms 的延迟，方便查看前端的加载状态：
+最后在 [/mock/server.js](https://github.com/imageslr/taro-library/tree/master/mock/server.js) 中添加两个中间件。第一个是将所有的`POST`请求转为`GET`请求，防止数据被修改；第二个是为服务器设置一个 750ms 的延迟，模拟更真实的加载过程：
 
 ```JS
 // 将 POST 请求转为 GET
