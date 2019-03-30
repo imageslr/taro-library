@@ -25,6 +25,13 @@ export default class Search extends Component {
       isError: false,
       searchResults: []
     };
+
+    this.onChange = this.onChange.bind(this);
+    this.onConfirm = this.onConfirm.bind(this);
+    this.onScan = this.onScan.bind(this);
+    this.onClickTag = this.onClickTag.bind(this);
+    this.onDeleteHistory = this.onDeleteHistory.bind(this);
+    this.onReSearch = this.onReSearch.bind(this);
   }
 
   onChange(value) {
@@ -131,14 +138,14 @@ export default class Search extends Component {
           focus
           fixed
           value={value}
-          onChange={this.onChange.bind(this)}
-          onConfirm={this.onConfirm.bind(this)}
-          onScan={this.onScan.bind(this)}
+          onChange={this.onChange}
+          onConfirm={this.onConfirm}
+          onScan={this.onScan}
         />
         {showScan && (
           <View
             className='scan-row at-row at-row__align--center'
-            onClick={this.onScan.bind(this)}
+            onClick={this.onScan}
           >
             <View className='at-col'>扫描图书条形码</View>
             <Text className='scan-row__arrow at-icon at-icon-chevron-right at-col' />
@@ -150,7 +157,7 @@ export default class Search extends Component {
               <View className='history-title at-col'>搜索历史</View>
               <View
                 className='history-delete at-col'
-                onClick={this.onDeleteHistory.bind(this)}
+                onClick={this.onDeleteHistory}
               >
                 <View className='at-icon at-icon-trash' />
                 {/* 清除 */}
@@ -162,7 +169,7 @@ export default class Search extends Component {
                   className='history-item'
                   key={item}
                   name={item}
-                  onClick={this.onClickTag.bind(this)}
+                  onClick={this.onClickTag}
                 >
                   {item}
                 </AtTag>
@@ -173,7 +180,7 @@ export default class Search extends Component {
         {isSearching && (
           <AtActivityIndicator mode='center' content='加载中...' />
         )}
-        {isError && <NetworkError onClick={this.onReSearch.bind(this)} />}
+        {isError && <NetworkError onClick={this.onReSearch} />}
         {showResults && (
           <View>
             {searchResults.map(item => (

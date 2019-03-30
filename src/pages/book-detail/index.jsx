@@ -18,6 +18,12 @@ export default class BookDetail extends Component {
     isError: false
   };
 
+  constructor() {
+    super(...arguments);
+    this.onPreview = this.onPreview.bind(this);
+    this.onReload = this.onReload.bind(this);
+  }
+
   componentDidMount() {
     this.loadBook();
   }
@@ -77,7 +83,7 @@ export default class BookDetail extends Component {
                 className='at-col at-col--auto book__img'
                 src={book.image}
                 mode='widthFix'
-                onClick={this.onPreview.bind(this)}
+                onClick={this.onPreview}
               />
             </View>
             <View className='book-introduction'>
@@ -97,7 +103,7 @@ export default class BookDetail extends Component {
         {isFetching && (
           <AtActivityIndicator mode='center' content='加载中...' />
         )}
-        {isError && <NetworkError onClick={this.onReload.bind(this)} />}
+        {isError && <NetworkError onClick={this.onReload} />}
       </View>
     );
   }

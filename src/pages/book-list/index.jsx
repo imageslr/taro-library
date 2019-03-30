@@ -27,6 +27,8 @@ export default class BookList extends Component {
 
     this.state = { isShowNoticebar: true };
 
+    this.onLongPress = this.onLongPress.bind(this);
+
     const { type } = this.$router.params;
     switch (type) {
       case "new":
@@ -78,11 +80,7 @@ export default class BookList extends Component {
           </AtNoticebar>
         )}
         {data.map(item => (
-          <BookCard
-            data={item}
-            key={item.id}
-            onLongPress={this.onLongPress.bind(this)}
-          />
+          <BookCard data={item} key={item.id} onLongPress={this.onLongPress} />
         ))}
       </View>
     );

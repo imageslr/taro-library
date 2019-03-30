@@ -37,6 +37,11 @@ export default class Home extends Component {
     recommendBooks: PropTypes.arrayOf(PropTypes.object)
   };
 
+  constructor() {
+    super(...arguments);
+    this.onClickSearchBar = this.onClickSearchBar.bind(this);
+  }
+
   componentDidMount() {
     this.props.dispatchGetNewBooks();
     this.props.dispatchGetHotBooks();
@@ -50,7 +55,7 @@ export default class Home extends Component {
   render() {
     return (
       <View>
-        <FakeSearchBar onClick={this.onClickSearchBar.bind(this)} />
+        <FakeSearchBar onClick={this.onClickSearchBar} />
         <Panel
           url={`${URL.BOOK_LIST}?type=new`}
           title='新书速递'
