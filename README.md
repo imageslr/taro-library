@@ -129,51 +129,6 @@ Taro UI 封装了一些常用的 [Flex 样式类](https://taro-ui.aotu.io/#/docs
 }
 ```
 
-不过有时候依然会遇到命名问题：在 HTML 中是父子关系的元素，其类名是否也应该是包含关系呢？比如下面这个例子：
-
-```html
-<form class="search-bar">
-  <div class="search-bar__content">
-    <input class="search-bar__content__input" />
-    <button class="search-bar__content__button">搜索</button>
-  </div>
-</form>
-```
-
-`search-bar__content`中包含两个子元素`input`和`button`，于是我想当然地就将`input`和`button`的类名命名为`search-bar__content__input`和`search-bar__content__button`。但是这种命名方式违背了 BEM 命名规范，变成了`B-E-E-M`。
-
-在这里，我参考[使用 BEM 的几个注意事项](http://lightcss.com/common-mistakes-of-bem-naming/)中列举的几个原则对上例进行了修改：
-
-- 如果一个区域可以复用且不依赖其它组件，则可作为一个块（Block）
-- 如果一个区域不能拿到外部单独使用，那么就应该作为一个元素（Element）
-- 元素不能包含元素
-
-所以上面的示例有以下两种修改方式：
-
-_1. `search-bar-content`作为单独的块，`input`、`button`是`search-bar-content`这个块的子元素_
-
-```html
-<form class="search-bar">
-  <div class="search-bar-content">
-    <input class="search-bar-content__input" />
-    <button class="search-bar-content__button">搜索</button>
-  </div>
-</form>
-```
-
-_2. `search-bar__content`不作为单独的块，则`search-bar__content`、`search-bar__input`与`search-bar__button`平级，均是`search-bar`这个块的子元素_
-
-```html
-<form class="search-bar">
-  <div class="search-bar__content">
-    <input class="search-bar__content-input" />
-    <!-- search-bar__input 亦可 -->
-    <button class="search-bar__content-button">搜索</button>
-    <!-- search-bar__button 亦可 -->
-  </div>
-</form>
-```
-
 #### 组件样式
 
 对于`/components`目录下的可复用组件，使用`my`作为命名空间，避免被全局样式污染，比如`my-panel`、`my-search-bar`等。
