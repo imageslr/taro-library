@@ -55,11 +55,11 @@ export default class Search extends Component {
       searchResults: []
     });
     try {
-      let results = await API.get(`/books?keyword=${value}`);
+      let { data } = await API.get(`/books?keyword=${value}`);
       this.setState({
         isSearching: false,
         isError: false,
-        searchResults: results
+        searchResults: data
       });
     } catch (e) {
       this.setState({
