@@ -24,14 +24,11 @@ export default class BookList extends Component {
 
   constructor() {
     super(...arguments);
-
     this.state = { isShowNoticebar: true };
-
     this.onLongPress = this.onLongPress.bind(this);
-
   }
 
-  componentWillMount(){
+  componentDidMount() {
     const { type } = this.$router.params;
     switch (type) {
       case "new":
