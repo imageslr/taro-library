@@ -29,6 +29,9 @@ export default class BookList extends Component {
 
     this.onLongPress = this.onLongPress.bind(this);
 
+  }
+
+  componentWillMount(){
     const { type } = this.$router.params;
     switch (type) {
       case "new":

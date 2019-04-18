@@ -34,6 +34,9 @@ const customInterceptor = function(chain) {
   });
 };
 
-const interceptors = [customInterceptor, Taro.interceptors.logInterceptor];
+// const interceptors = [customInterceptor, Taro.interceptors.logInterceptor];
 
-export default interceptors;
+// export default interceptors;
+
+Taro.addInterceptor(customInterceptor)
+Taro.addInterceptor(Taro.interceptors.logInterceptor)

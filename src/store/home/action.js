@@ -17,7 +17,7 @@ export const getNewBooks = () => {
     let result = await API.get("/books/new");
     dispatch({
       type: HOME.GET_NEW_BOOK,
-      books: result
+      books: result.data
     });
   };
 };
@@ -29,7 +29,7 @@ export const getHotBooks = () => {
     let result = await API.get("/books/hot");
     dispatch({
       type: HOME.GET_HOT_BOOK,
-      books: result
+      books: result.data
     });
   };
 };
@@ -41,7 +41,7 @@ export const getRecommendBooks = () => {
     let result = await API.get("/books/recommend");
     dispatch({
       type: HOME.GET_RECOMMEND_BOOK,
-      books: result
+      books: result.data
     });
   };
 };

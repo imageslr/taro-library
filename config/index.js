@@ -112,6 +112,7 @@ const config = {
         }
       }
     },
+    esnextModules: ['taro-ui'],
     sassLoaderOption: {
       importer: sassImporter
     }
