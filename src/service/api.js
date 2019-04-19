@@ -1,8 +1,8 @@
 import Taro from "@tarojs/taro";
 import BASE_URL from "./config";
-import interceptors from "./interceptors";
+// import interceptors from "./interceptors";
 
-interceptors.forEach(i => Taro.addInterceptor(i));
+// interceptors.forEach(i => Taro.addInterceptor(i));
 
 export default {
   baseOptions(params, method = "GET") {

@@ -49,7 +49,7 @@ export default class BookDetail extends Component {
         book = await API.get(`/books?isbn=${this.$router.params.isbn}`);
       }
       this.setState({
-        book,
+        book: book.data,
         isFetching: false,
         isError: false
       });
