@@ -4,26 +4,26 @@ var Random = Mock.Random;
 
 // 七牛云图书封面外链
 const images = [
-  "http://pon67qd0v.bkt.clouddn.com/image1.jpg",
-  "http://pon67qd0v.bkt.clouddn.com/image10.jpeg",
-  "http://pon67qd0v.bkt.clouddn.com/image12.jpeg",
-  "http://pon67qd0v.bkt.clouddn.com/image13.jpeg",
-  "http://pon67qd0v.bkt.clouddn.com/image14.jpg",
-  "http://pon67qd0v.bkt.clouddn.com/image16.jpg",
-  "http://pon67qd0v.bkt.clouddn.com/image17.jpg",
-  "http://pon67qd0v.bkt.clouddn.com/image2.jpg",
-  "http://pon67qd0v.bkt.clouddn.com/image20.png",
-  "http://pon67qd0v.bkt.clouddn.com/image21.png",
-  "http://pon67qd0v.bkt.clouddn.com/image22.png",
-  "http://pon67qd0v.bkt.clouddn.com/image23.png",
-  "http://pon67qd0v.bkt.clouddn.com/image24.png",
-  "http://pon67qd0v.bkt.clouddn.com/image3.jpg",
-  "http://pon67qd0v.bkt.clouddn.com/image4.jpg",
-  "http://pon67qd0v.bkt.clouddn.com/image5.jpg",
-  "http://pon67qd0v.bkt.clouddn.com/image6.jpeg",
-  "http://pon67qd0v.bkt.clouddn.com/image7.jpg",
-  "http://pon67qd0v.bkt.clouddn.com/image8.png",
-  "http://pon67qd0v.bkt.clouddn.com/image9.jpg"
+  "http://qiniu.library-online.cn/image1.jpg",
+  "http://qiniu.library-online.cn/image10.jpeg",
+  "http://qiniu.library-online.cn/image12.jpeg",
+  "http://qiniu.library-online.cn/image13.jpeg",
+  "http://qiniu.library-online.cn/image14.jpg",
+  "http://qiniu.library-online.cn/image16.jpg",
+  "http://qiniu.library-online.cn/image17.jpg",
+  "http://qiniu.library-online.cn/image2.jpg",
+  "http://qiniu.library-online.cn/image20.png",
+  "http://qiniu.library-online.cn/image21.png",
+  "http://qiniu.library-online.cn/image22.png",
+  "http://qiniu.library-online.cn/image23.png",
+  "http://qiniu.library-online.cn/image24.png",
+  "http://qiniu.library-online.cn/image3.jpg",
+  "http://qiniu.library-online.cn/image4.jpg",
+  "http://qiniu.library-online.cn/image5.jpg",
+  "http://qiniu.library-online.cn/image6.jpeg",
+  "http://qiniu.library-online.cn/image7.jpg",
+  "http://qiniu.library-online.cn/image8.png",
+  "http://qiniu.library-online.cn/image9.jpg"
 ];
 
 const titles = Random.shuffle([
