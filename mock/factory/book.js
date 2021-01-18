@@ -4,26 +4,26 @@ var Random = Mock.Random;
 
 // 七牛云图书封面外链
 const images = [
-  "http://qiniu.library-online.cn/image1.jpg",
-  "http://qiniu.library-online.cn/image10.jpeg",
-  "http://qiniu.library-online.cn/image12.jpeg",
-  "http://qiniu.library-online.cn/image13.jpeg",
-  "http://qiniu.library-online.cn/image14.jpg",
-  "http://qiniu.library-online.cn/image16.jpg",
-  "http://qiniu.library-online.cn/image17.jpg",
-  "http://qiniu.library-online.cn/image2.jpg",
-  "http://qiniu.library-online.cn/image20.png",
-  "http://qiniu.library-online.cn/image21.png",
-  "http://qiniu.library-online.cn/image22.png",
-  "http://qiniu.library-online.cn/image23.png",
-  "http://qiniu.library-online.cn/image24.png",
-  "http://qiniu.library-online.cn/image3.jpg",
-  "http://qiniu.library-online.cn/image4.jpg",
-  "http://qiniu.library-online.cn/image5.jpg",
-  "http://qiniu.library-online.cn/image6.jpeg",
-  "http://qiniu.library-online.cn/image7.jpg",
-  "http://qiniu.library-online.cn/image8.png",
-  "http://qiniu.library-online.cn/image9.jpg"
+  "https://i.loli.net/2021/01/18/BMGUTWkwy5vJZse.jpg",
+  "https://i.loli.net/2021/01/18/1UDabn7I6WAXkte.jpg",
+  "https://i.loli.net/2021/01/18/Fz5d16ZsmXHAyqI.jpg",
+  "https://i.loli.net/2021/01/18/kPAFWOG4vhSVXb1.jpg",
+  "https://i.loli.net/2021/01/18/lhPs5tZ1qFGczQU.jpg",
+  "https://i.loli.net/2021/01/18/EsGWpS4KZnP9uOT.jpg",
+  "https://i.loli.net/2021/01/18/GjVI2QkHuREF7YN.jpg",
+  "https://i.loli.net/2021/01/18/gzq4ZAS7PN5tLmh.jpg",
+  "https://i.loli.net/2021/01/18/H8cb2If5tm7Rk4e.jpg",
+  "https://i.loli.net/2021/01/18/Y5RCh3neMAGPsFz.jpg",
+  "https://i.loli.net/2021/01/18/no1ELFz7gIBq8Tk.jpg",
+  "https://i.loli.net/2021/01/18/NyHVZk4evETGtJU.jpg",
+  "https://i.loli.net/2021/01/18/2Fs7xYmaKr9NBid.jpg",
+  "https://i.loli.net/2021/01/18/izYXkjCM7x4S6U9.jpg",
+  "https://i.loli.net/2021/01/18/y7rtipekn3SwlhI.png",
+  "https://i.loli.net/2021/01/18/LSFhuWVlMGcAUOB.png",
+  "https://i.loli.net/2021/01/18/9F3ND7KRdnuLxaX.png",
+  "https://i.loli.net/2021/01/18/kAYTchObipDK7dQ.jpg",
+  "https://i.loli.net/2021/01/18/D4JfBlFSIpdVcbi.png",
+  "https://i.loli.net/2021/01/18/EXvgjNM9VpBIL6R.png"
 ];
 
 const titles = Random.shuffle([
