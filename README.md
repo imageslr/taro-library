@@ -204,7 +204,7 @@ $ taro init taro-library
 安装项目依赖：
 
 ```
-$ npm install taro-ui && npm install json-server mockjs gulp gulp-nodemon browser-sync --save-dev
+$ npm install taro-ui && npm install json-server mockjs gulp@3.9.1 gulp-nodemon browser-sync --save-dev
 ```
 
 ## 引入 Redux
@@ -559,7 +559,7 @@ async function getBook(id) {
 这里需要安装几个依赖包，之前安装过就不用再装了：
 
 ```
-$ npm install json-server mockjs gulp gulp-nodemon browser-sync --save-dev
+$ npm install json-server mockjs gulp@3.9.1 gulp-nodemon browser-sync --save-dev
 ```
 
 要注意 gulp 需要是 3.9.\* 版本。后续编译小程序或者启动 mock 服务器时如果报错，再运行一遍`npm install`就好了。
