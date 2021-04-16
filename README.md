@@ -20,15 +20,24 @@ Taro + Taro UI + Redux + Webpack + ES6 + Mock
 - [项目简介](#项目简介)
 - [技术栈](#技术栈)
 - [项目截图](#项目截图)
+- [目录](#目录)
 - [运行项目](#运行项目)
 - [开始学习](#开始学习)
   - [Taro 简介](#taro-简介)
   - [开发工具](#开发工具)
   - [样式规范](#样式规范)
+    - [CSS 预处理器](#css-预处理器)
+    - [布局](#布局)
+    - [BEM 命名规范](#bem-命名规范)
+    - [组件样式](#组件样式)
+    - [尺寸单位](#尺寸单位)
 - [项目初始化](#项目初始化)
 - [引入 Redux](#引入-redux)
   - [Redux 文件设置](#redux-文件设置)
   - [connect 方法](#connect-方法)
+    - [参数](#参数)
+    - [mapStateToProps](#mapstatetoprops)
+    - [mapDispatchToProps](#mapdispatchtoprops)
   - [使用 connect 方法](#使用-connect-方法)
   - [异步 Action](#异步-action)
 - [API 封装](#api-封装)
@@ -37,10 +46,6 @@ Taro + Taro UI + Redux + Webpack + ES6 + Mock
   - [添加拦截器](#添加拦截器)
   - [async 和 await](#async-和-await)
 - [搭建本地 mock 服务](#搭建本地-mock-服务)
-  - [安装依赖](#安装依赖)
-  - [设置 json-server](#设置-json-server)
-  - [启动服务](#启动服务)
-  - [补充说明](#补充说明)
 - [其他补充](#其他补充)
   - [Taro JSX](#taro-jsx)
   - [Taro 生命周期](#taro-生命周期)
@@ -50,20 +55,46 @@ Taro + Taro UI + Redux + Webpack + ES6 + Mock
 
 ## 运行项目
 
-本项目在以下环境中编译通过：taro v1.2.20、nodejs v8.11.2、gulp v3.9.1、微信开发者工具最新版
+本项目在以下环境中编译通过：taro v1.2.20、nodejs v8.11.2、微信开发者工具最新版。
 
+首先需要安装必要的环境：
 ```
-$ git clone https://github.com/imageslr/taro-library.git
+# 安装 nvm，已经安装请忽略
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 
-$ cd taro-library
+# 安装 nodejs v8.11.2
+nvm install v8.11.2
 
-$ npm install 或者 yarn
+# 检查 node 版本
+node --version
 
-$ npm run dev:weapp
-
-// 新建一个终端，在项目根目录下执行
-$ gulp mock
+## 安装 taro
+npm install -g @tarojs/cli@1.2.20
 ```
+
+克隆项目：
+```
+git clone https://github.com/imageslr/taro-library.git
+cd taro-library
+```
+
+启动小程序：
+```
+# 安装依赖
+npm install // 或者 yarn
+
+# 编译小程序
+npm run dev:weapp
+```
+
+启动 mock 服务 (新建一个终端，在项目根目录下执行)：
+```
+cd simplest-mock-server
+npm install
+gulp mock
+```
+
+之后在微信开发者工具中导入项目，即可预览。
 
 ## 开始学习
 
@@ -204,7 +235,7 @@ $ taro init taro-library
 安装项目依赖：
 
 ```
-$ npm install taro-ui && npm install json-server mockjs gulp@3.9.1 gulp-nodemon browser-sync --save-dev
+$ npm install taro-ui
 ```
 
 ## 引入 Redux
@@ -548,80 +579,27 @@ async function getBook(id) {
 
 常见的 mock 平台有 EasyMock、rap2 等，不过这些网站有时候响应较慢，调试起来也不太方便，因此在本地搭建一个 mock 服务器是更好的选择。
 
-搭建本地 mock 服务器有几种思路，如本地安装 EasyMock，或者 php 简单写几行返回数据的代码，但是这些都需要安装额外的运行环境，工作量较大。所以我选择 [json-server](https://github.com/typicode/json-server) 实现 mock 服务，搭建过程主要参考了[纯手工打造前端后端分离项目中的 mock-server](https://yanm1ng.github.io/2017/06/12/%E7%BA%AF%E6%89%8B%E5%B7%A5%E6%89%93%E9%80%A0%E5%89%8D%E7%AB%AF%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84mock-server/)。
+搭建本地 mock 服务器有几种思路，如本地安装 EasyMock，或者 php 简单写几行返回数据的代码，但是这些都需要安装额外的运行环境，工作量较大。这里我选择了 [simplest-mock-server](https://github.com/imageslr/simplest-mock-server)，一个开箱即用的 REST API 模拟工具，详细使用教程见[文档](https://github.com/imageslr/simplest-mock-server)。
 
-[json-server](https://github.com/typicode/json-server) 是一个开箱即用的 REST API 模拟工具，它的文档中有一些简单示例。不过`json-server`还无法满足我对 mock 服务器的全部需求，所以后面还需要对它进行一些配置。
-
-完整代码见 [/mock](https://github.com/imageslr/taro-library/tree/master/mock)。
-
-### 安装依赖
-
-这里需要安装几个依赖包，之前安装过就不用再装了：
+启动 mock 服务的方法如下：
 
 ```
-$ npm install json-server mockjs gulp@3.9.1 gulp-nodemon browser-sync --save-dev
+# 在本项目根目录下执行
+cd simplest-mock-server
+
+# 安装依赖
+npm install
+
+# 启动 mock 服务
+gulp mock
 ```
 
-要注意 gulp 需要是 3.9.\* 版本。后续编译小程序或者启动 mock 服务器时如果报错，再运行一遍`npm install`就好了。
+关闭`gulp mock`终端进程，模拟网络中断场景；修改 [/simplest-mock-server/server.js](https://github.com/imageslr/taro-library/tree/master/simplest-mock-server/server.js) 中的延迟时长，模拟 timeout 场景。
 
-### 设置 json-server
-
-```
-└── mock
-    ├── factory
-    │   └── book.js
-    ├── db.js
-    ├── routes.js
-    └── server.js
-```
-
-首先使用 Mock.js 生成一些模拟数据。这部分代码见 [/mock/factory/book.js](https://github.com/imageslr/taro-library/tree/master/mock/factory/book.js)，Mock.js 的使用方式请查看[文档](http://mockjs.com/examples.html)。
-
-然后创建 mock 数据源，代码见 [/mock/db.js](https://github.com/imageslr/taro-library/tree/master/mock/db.js)。`json-server`会将数据源中的**键名**作为接口路径名，**值**作为接口返回的数据。
-
-`json-server`不支持在数据源的键名中添加`/`，无法直接设置`/books/new`这样的二级路径，因此我们需要使用`json-server`提供的路由重写功能：在数据源中，使用`books-new`表示`books/new`；在路由表中，将`/books/new`指向`/books-new`。代码见 [/mock/routes.js](https://github.com/imageslr/taro-library/tree/master/mock/routes.js)。
-
-最后在 [/mock/server.js](https://github.com/imageslr/taro-library/tree/master/mock/server.js) 中添加两个中间件。第一个是将所有的`POST`请求转为`GET`请求，防止数据被修改；第二个是为服务器设置一个 750ms 的延迟，模拟更真实的加载过程：
-
-```JS
-// 将 POST 请求转为 GET
-server.use((request, res, next) => {
-  request.method = "GET";
-  next();
-});
-
-// 添加一个750ms的延迟
-server.use((request, res, next) => {
-  setTimeout(next, 750);
-});
-```
-
-### 启动服务
-
-在项目根目录下执行`gulp mock`即可启动 mock 服务器，之后改动`/mock`文件夹的任何内容，均会实时刷新 mock 服务器。代码见 [/gulpfile.js](https://github.com/imageslr/taro-library/tree/master/gulpfile.js)。
-
-开发时，首先执行如下命令，编译小程序：
-
-```
-$ npm run dev:weapp
-```
-
-然后新建一个终端，执行以下命令，启动 mock 服务器：
-
-```
-$ gulp mock
-```
+接口配置位于 [/simplest-mock-server/api](https://github.com/imageslr/taro-library/tree/master/simplest-mock-server/api)，改动此文件夹下的任何内容，均会实时刷新 mock 服务器。
 
 之后就享受愉快的开发过程吧！
 
-### 补充说明
-
-1. 关闭`gulp mock`终端进程，模拟网络中断场景；修改 [/mock/server.js](https://github.com/imageslr/taro-library/tree/master/mock/server.js) 中的延迟时长，模拟 timeout 场景。
-2. mock 服务器只能在电脑访问，如果想在真机上测试，可以使用 EasyMock：
-   1. 启动 mock 服务器，访问`localhost:3000`，可以看到所有 mock 接口
-   2. 在 EasyMock 项目中新建接口，将 mock 接口的模拟数据复制过去
-   3. 将 [/src/service/config.js](https://github.com/imageslr/taro-library/tree/master/src/service/config.js) 中的开发环境`BASE_URL`改为 EasyMock 项目的`BASE_URL`
-3. 参考资料：[json-server 文档](https://github.com/typicode/json-server)、[纯手工打造前端后端分离项目中的 mock-server](https://yanm1ng.github.io/2017/06/12/%E7%BA%AF%E6%89%8B%E5%B7%A5%E6%89%93%E9%80%A0%E5%89%8D%E7%AB%AF%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84mock-server/)
 
 ## 其他补充
 
