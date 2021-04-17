@@ -582,7 +582,7 @@ async function getBook(id) {
 
 常见的 mock 平台有 EasyMock、rap2 等，不过这些网站有时候响应较慢，调试起来也不太方便，因此在本地搭建一个 mock 服务器是更好的选择。
 
-搭建本地 mock 服务器有几种思路，如本地安装 EasyMock，或者 php 简单写几行返回数据的代码，但是这些都需要安装额外的运行环境，工作量较大。这里我选择了 [simplest-mock-server](https://github.com/imageslr/simplest-mock-server)，一个开箱即用的 REST API 模拟工具，详细使用教程见[文档](https://github.com/imageslr/simplest-mock-server)。
+搭建本地 mock 服务器有几种思路，如本地安装 EasyMock，或者 php 简单写几行返回数据的代码，但是这些都需要安装额外的运行环境，工作量较大。这里我选择了 [simplest-mock-server](https://github.com/imageslr/simplest-mock-server)，一个开箱即用的 RESTful API mock 服务，详细使用教程见[文档](https://github.com/imageslr/simplest-mock-server)。
 
 启动 mock 服务的方法如下：
 
