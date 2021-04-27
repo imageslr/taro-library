@@ -1,6 +1,7 @@
-import Taro, { Component } from "@tarojs/taro";
+import Taro from "@tarojs/taro";
 import { View, Button, Text } from "@tarojs/components";
-import { connect } from "@tarojs/redux";
+import { Component } from 'react'
+import { connect } from 'react-redux'
 import Copyright from "../../components/copyright";
 import { add, minus, asyncAdd } from "../../store/counter/action";
 
@@ -23,10 +24,6 @@ import "./index.scss";
   })
 )
 class Index extends Component {
-  config = {
-    navigationBarTitleText: "首页"
-  };
-
   componentWillReceiveProps(nextProps) {
     console.log(this.props, nextProps);
   }

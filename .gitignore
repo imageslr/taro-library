@@ -1,5 +1,5 @@
 dist/
 .temp/
 .rn_temp/
-node_modules/
+node_modules*
 .DS_Store

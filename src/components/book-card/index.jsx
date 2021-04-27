@@ -1,4 +1,5 @@
-import Taro, { Component } from "@tarojs/taro";
+import Taro from "@tarojs/taro";
+import { Component } from 'react'
 import { View, Navigator, Image, Text } from "@tarojs/components";
 import PropTypes from "prop-types";
 import URL from "../../constants/urls";
@@ -27,18 +28,14 @@ export default class BookCard extends Component {
     onLongPress: PropTypes.func
   };
 
-  onLongPress() {
-    this.props.onLongPress(this.state.data.id);
-  }
-
   render() {
     const { data, showArrow } = this.props;
     return (
-      <Navigator
+      <View
         className='at-row at-row__align--start my-book-card'
         hoverClass='None'
-        url={`${URL.BOOK_DETAIL}?id=${data.id}`}
-        onLongPress={this.onLongPress}
+        onClick={() => Taro.navigateTo({url: `${URL.BOOK_DETAIL}?id=${data.id}`})} 
+        onLongPress={this.props.onLongPress}
       >
         <Image
           className='at-col at-col--auto my-book-card__img'
@@ -63,7 +60,7 @@ export default class BookCard extends Component {
             style={{ alignSelf: "center" }}
           />
         )}
-      </Navigator>
+      </View>
     );
   }
 }

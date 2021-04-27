@@ -1,4 +1,6 @@
-import Taro, { Component } from "@tarojs/taro";
+import Taro from "@tarojs/taro";
+import { getCurrentInstance } from '@tarojs/taro'
+import { Component } from 'react'
 import { View, Image, Text, Block } from "@tarojs/components";
 import { AtActivityIndicator } from "taro-ui";
 import API from "../../service/api";
@@ -8,10 +10,6 @@ import HorizonList from "../../components/horizon-list";
 import "./index.scss";
 
 export default class BookDetail extends Component {
-  config = {
-    navigationBarTitleText: "图书详情"
-  };
-
   state = {
     book: {},
     isFetching: true,
@@ -43,10 +41,10 @@ export default class BookDetail extends Component {
   async loadBook() {
     try {
       let book;
-      if (this.$router.params.id) {
-        book = await API.get(`/books/${this.$router.params.id}`);
+      if (getCurrentInstance().router.params.id) {
+        book = await API.get(`/books/${getCurrentInstance().router.params.id}`);
       } else {
-        book = await API.get(`/books?isbn=${this.$router.params.isbn}`);
+        book = await API.get(`/books/isbn/${getCurrentInstance().router.params.isbn}`);
       }
       this.setState({
         book,

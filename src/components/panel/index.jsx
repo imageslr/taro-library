@@ -1,4 +1,4 @@
-import Taro, { Component } from "@tarojs/taro";
+import { Component } from 'react'
 import { View, Text, Navigator } from "@tarojs/components";
 import PropTypes from "prop-types";
 

@@ -1,7 +1,9 @@
-import Taro, { Component } from "@tarojs/taro";
+import Taro from "@tarojs/taro";
+import { getCurrentInstance } from '@tarojs/taro'
+import { Component } from 'react'
+import { connect } from 'react-redux'
 import { View } from "@tarojs/components";
 import { AtMessage, AtNoticebar } from "taro-ui";
-import { connect } from "@tarojs/redux";
 import { disfavorBookById } from "../../store/home/action";
 import BookCard from "../../components/book-card";
 
@@ -18,10 +20,6 @@ import "./index.scss";
   }
 )
 export default class BookList extends Component {
-  config = {
-    navigationBarTitleText: ""
-  };
-
   constructor() {
     super(...arguments);
     this.state = { isShowNoticebar: true };
@@ -29,7 +27,7 @@ export default class BookList extends Component {
   }
 
   componentDidMount() {
-    const { type } = this.$router.params;
+    const { type } = getCurrentInstance().router.params;
     switch (type) {
       case "new":
         return Taro.setNavigationBarTitle({ title: "新书速递" });
@@ -45,7 +43,7 @@ export default class BookList extends Component {
       itemList: ["不感兴趣"]
     })
       .then(() => {
-        this.props.dispatchDisfavorBook(id, this.$router.params.type);
+        this.props.dispatchDisfavorBook(id, getCurrentInstance().router.params.type);
         Taro.atMessage({ message: "我们会减少此图书的出现频率" });
       })
       .catch(e => {
@@ -53,13 +51,13 @@ export default class BookList extends Component {
       });
   }
 
-  onCloseNoticebar() {
+  onCloseNoticebar = () => {
     this.setState({ isShowNoticebar: false });
   }
 
   render() {
     let data;
-    const { type } = this.$router.params;
+    const { type } = getCurrentInstance().router.params;
     switch (type) {
       case "new":
         data = this.props.newBooks;
@@ -80,7 +78,7 @@ export default class BookList extends Component {
           </AtNoticebar>
         )}
         {data.map(item => (
-          <BookCard data={item} key={item.id} onLongPress={this.onLongPress} />
+          <BookCard data={item} key={item.id} onLongPress={() => this.onLongPress(item.id)} />
         ))}
       </View>
     );

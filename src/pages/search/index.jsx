@@ -1,4 +1,6 @@
-import Taro, { Component } from "@tarojs/taro";
+import Taro from "@tarojs/taro";
+import { Component } from 'react'
+import { connect } from 'react-redux'
 import { View, Text } from "@tarojs/components";
 import { AtTag, AtActivityIndicator } from "taro-ui";
 import { isISBN } from "../../utils/validator";
@@ -11,10 +13,6 @@ import BookCard from "../../components/book-card";
 import "./index.scss";
 
 export default class Search extends Component {
-  config = {
-    navigationBarTitleText: "搜索"
-  };
-
   constructor() {
     super(...arguments);
     let history = Taro.getStorageSync("history");
@@ -128,9 +126,9 @@ export default class Search extends Component {
       !isSearching &&
       !isError &&
       !(searchResults && searchResults.length) &&
-      history.length;
+      !!history.length;
     const showResults =
-      !isSearching && !isError && (searchResults && searchResults.length);
+      !isSearching && !isError && !!(searchResults && searchResults.length);
 
     return (
       <View className='container'>
@@ -181,13 +179,13 @@ export default class Search extends Component {
           <AtActivityIndicator mode='center' content='加载中...' />
         )}
         {isError && <NetworkError onClick={this.onReSearch} />}
-        {showResults && (
+        {showResults && 
           <View>
             {searchResults.map(item => (
               <BookCard data={item} key={item.id} />
             ))}
           </View>
-        )}
+        }
       </View>
     );
   }

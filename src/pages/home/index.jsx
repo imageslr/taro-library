@@ -1,7 +1,8 @@
-import Taro, { Component } from "@tarojs/taro";
+import Taro from "@tarojs/taro";
+import { Component } from 'react'
+import { connect } from 'react-redux'
 import { View } from "@tarojs/components";
 import PropTypes from "prop-types";
-import { connect } from "@tarojs/redux";
 import {
   getNewBooks,
   getHotBooks,
@@ -27,10 +28,6 @@ import "./index.scss";
   }
 )
 export default class Home extends Component {
-  config = {
-    navigationBarTitleText: "首页"
-  };
-
   static propTypes = {
     newBooks: PropTypes.arrayOf(PropTypes.object),
     hotBooks: PropTypes.arrayOf(PropTypes.object),
