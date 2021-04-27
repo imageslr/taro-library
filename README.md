@@ -46,6 +46,7 @@ Taro + Taro UI + Redux + Webpack + ES6 + Mock
   - [添加拦截器](#添加拦截器)
   - [async 和 await](#async-和-await)
 - [搭建本地 mock 服务](#搭建本地-mock-服务)
+- [搭建云托管 mock 服务](#搭建云托管-mock-服务)
 - [其他补充](#其他补充)
   - [Taro JSX](#taro-jsx)
   - [Taro 生命周期](#taro-生命周期)
@@ -238,7 +239,7 @@ $ taro init taro-library
 安装项目依赖：
 
 ```
-$ npm install taro-ui
+$ npm install taro-ui --save
 ```
 
 ## 引入 Redux
@@ -603,6 +604,11 @@ gulp mock
 
 之后就享受愉快的开发过程吧！
 
+## 搭建云托管 mock 服务
+
+使用微信云托管 API 需要升级 taro，改动较大，所以这里暂时没有更新代码。
+
+请查看 [weapp-library](https://github.com/imageslr/weapp-library#%E6%90%AD%E5%BB%BA%E4%BA%91%E6%89%98%E7%AE%A1-mock-server)，提供了一个微信云托管的完整示例。
 
 ## 其他补充
 
