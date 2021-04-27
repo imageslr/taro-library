@@ -606,9 +606,7 @@ gulp mock
 
 ## 搭建云托管 mock 服务
 
-使用微信云托管 API 需要升级 taro，改动较大，所以这里暂时没有更新代码。
-
-请查看 [weapp-library](https://github.com/imageslr/weapp-library#%E6%90%AD%E5%BB%BA%E4%BA%91%E6%89%98%E7%AE%A1-mock-server)，提供了一个微信云托管的完整示例。
+本项目的线上版本使用微信云托管提供 mock 接口。需要升级 taro 到 v3.0，代码改动较大，因此单独放在 [cloud](https://github.com/imageslr/taro-library/tree/cloud) 分支。微信云托管的搭建教程请查看 [weapp-library](https://github.com/imageslr/weapp-library#%E6%90%AD%E5%BB%BA%E4%BA%91%E6%89%98%E7%AE%A1-mock-server)。
 
 ## 其他补充
 

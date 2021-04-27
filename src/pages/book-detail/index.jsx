@@ -46,7 +46,7 @@ export default class BookDetail extends Component {
       if (this.$router.params.id) {
         book = await API.get(`/books/${this.$router.params.id}`);
       } else {
-        book = await API.get(`/books?isbn=${this.$router.params.isbn}`);
+        book = await API.get(`/books/isbn/${this.$router.params.isbn}`);
       }
       this.setState({
         book,
