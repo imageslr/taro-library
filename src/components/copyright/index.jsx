@@ -13,7 +13,7 @@ export default class Index extends Component {
     return (
       <View className='my-copyright'>
         <View className='my-copyright__text'>Copyright © 2021 <View className='my-copyright__link'>@imageslr</View></View>
-        <View className='my-copyright__text'>Blog <View className='my-copyright__link'>https://imageslr.github.io</View></View>
+        <View className='my-copyright__text'>Blog <View className='my-copyright__link'>https://imageslr.com</View></View>
       </View>
     );
   }
