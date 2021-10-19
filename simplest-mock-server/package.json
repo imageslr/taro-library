@@ -1,7 +1,7 @@
 {
   "devDependencies": {
     "express": "^4.17.1",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-nodemon": "^2.5.0",
     "minimist": "^1.2.5",
     "mockjs": "^1.1.0",
