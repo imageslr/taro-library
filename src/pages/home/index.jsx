@@ -42,7 +42,7 @@ export default class Home extends Component {
   componentDidMount() {
     Taro.showModal({
       title: '说明',
-      content: "本项目是一个开源项目，数据均为随机生成，仅供演示使用。",
+      content: "本项目是一个开源项目，数据均为随机生成，仅供演示使用。如果提示超时错误，请尝试刷新页面。",
       showCancel: false
     })
 
